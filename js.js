@@ -29,24 +29,31 @@ const displayVideos = (videos)=>{
     const videoCard = document.createElement('div');
     videoCard.innerHTML = `
 
-<div class="card bg-base-100 shadow-sm">
-  <figure>
-    <img
+<div class="card bg-base-100  ">
+  <figure class="relative">
+    <img class="w-full h-[150px] object-cover"
       src="${video.thumbnail}" />
+      <span class="absolute bottom-2 right-1 rounded text-sm text-white bg-black px-2">3hr 56 min ago</span>
   </figure>
-  <div class="card-body">
-    <h2 class="card-title">${video.title}</h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
-    </div>
+  <div class=" gap-3 flex py-5 px-0">
+    <!-- Profile part -->
+   <div class="profile">
+
+    <div class="avatar">
+  <div class="ring-primary ring-offset-base-100 w-6 rounded-full ring-2 ring-offset-2">
+    <img src="${video.authors[0].profile_picture}" />
+
   </div>
 </div>
-
-
-
-
-
+   </div>
+   <!-- intro part -->
+   <div class="intro">
+    <h2 class="text-sm font-semibold">Midnight Serenade</h2>
+    <p class="text-sm text-gray-400">${video.authors[0].profile_name}</p>
+    <p class="text-sm text-gray-400">91k View</p>
+   </div>   
+  </div>
+</div>
 
     `;
     videoContainer.append(videoCard);
