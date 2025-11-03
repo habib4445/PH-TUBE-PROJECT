@@ -50,7 +50,7 @@ const displayVideos = (videos)=>{
    <div class="intro">
     <h2 class="text-sm font-semibold">Midnight Serenade</h2>
     <p class="text-sm text-gray-400">${video.authors[0].profile_name}</p>
-    <p class="text-sm text-gray-400">91k View</p>
+    <p class="text-sm text-gray-400">${video.others.views} Views</p>
    </div>   
   </div>
 </div>
