@@ -49,8 +49,31 @@ const loadVideoDetails=(videoId)=>{
 
    fetch(url)
    .then((res)=>res.json())
-   .then((data)=>console.log(data));
-}
+   .then((data)=>displayVideoDetails(data));
+};
+const displayVideoDetails = (data) => {
+  const video = data.video; // extract actual video
+  document.getElementById("video_details").showModal();
+
+  const detailsContainer = document.getElementById("details-container");
+  detailsContainer.innerHTML = `
+   <div class="card bg-base-100 image-full w-96 shadow-sm">
+  <figure>
+    <img
+      src="${video.thumbnail}"
+      alt="Shoes" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">Card Title</h2>
+    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">Buy Now</button>
+    </div>
+  </div>
+</div>
+  `;
+};
+
 
 
 
